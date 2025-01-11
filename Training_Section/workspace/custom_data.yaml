@@ -1,0 +1,9 @@
+path: 'E:\AI_Biller\Training_Section\workspace\dataset'
+train: 'train/images'
+val: 'valid/images'
+
+names:
+  0: goodknight
+  1: soap
+  2: lemon
+  3: mouse

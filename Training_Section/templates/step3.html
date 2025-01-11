@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. Train the Model</title>
+    <link rel="stylesheet" href="./static/css/step3.css">
+</head>
+<body>
+    <header id="heading">
+        <h1>AI BILLER TRAINING SECTION</h1>
+    </header>
+
+    <section style="margin-top: 50px;">
+        <div>
+            <h2>Step-3:-</h2>
+            <p style="font-size: 30px; margin-top: -3px;">Train the model</p>
+        </div>
+
+        <img src="./static/images/step3.png" style="width: 100px; margin-top: -18px;" alt="">
+
+    </section>
+
+    <section style="margin-top: 30px;">
+        <form action="/training" method="post">
+            <input type="radio" name="train-choice" value="pc-train" required>
+            <label style="font-size: 20px;">This PC</label><br><br>
+            <input type="radio" name="train-choice" value="cloud-train">
+            <label style="font-size: 20px;">On cloud</label><br><br>
+            <input id="button-id" type="submit" value="Train the model">
+        </form>
+    </section>
+
+</body>
+</html>
+

@@ -1,0 +1,97 @@
+
+body{
+        background-color: #c7e6f3;
+    }
+
+h1{
+        font-size: 40px;
+}
+#heading{
+        display: flex;
+        margin-top: 70px;
+        justify-content: center;
+}
+
+.row {
+        display: flex;
+      }
+      
+.column {
+        flex: 1;
+        padding: 3px;
+        text-align: center;
+}
+
+
+input[type='file']{
+        color: #c7e6f3;
+        width: 144PX;
+        HEIGHT: 44PX;
+        FONT-SIZE: 16PX;
+        margin-top: 9px;
+}
+input::file-selector-button {
+        border: 0;
+        line-height: 2.5;
+        padding: 0 20px;
+        font-size: 1rem;
+        text-align: center;
+        color: #fff;
+        text-shadow: 1px 1px 1px #000;
+        border-radius: 10px;
+        background-color: rgba(220, 0, 0, 1);
+        background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+        box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+input::file-selector-button:hover {
+        background-color: rgba(255, 0, 0, 1);
+}
+    
+input::file-selector-button:active {
+        box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.capture-button {
+        border: 0;
+        line-height: 2.5;
+        padding: 0 20px;
+        font-size: 1rem;
+        text-align: center;
+        color: #fff;
+        text-shadow: 1px 1px 1px #000;
+        border-radius: 10px;
+        background-color: rgba(220, 0, 0, 1);
+        background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+        box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.capture-button:hover {
+        background-color: rgba(255, 0, 0, 1);
+}
+
+.capture-button:active {
+        box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+#button-id {
+        border: 0;
+        width: 140px;
+        line-height: 2.5;
+        padding: 0 20px;
+        font-size: 1.1rem;
+        text-align: center;
+        color: #fff;
+        text-shadow: 1px 1px 1px #000;
+        border-radius: 10px;
+        background-color: rgba(220, 0, 0, 1);
+        background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+        box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    }
+    
+    #button-id:hover {
+        background-color: rgba(255, 0, 0, 1);
+    }
+    #button-id:active {
+        box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+    }
+

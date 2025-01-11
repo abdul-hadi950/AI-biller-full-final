@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4. Perform Detections</title>
+    <link rel="stylesheet" href="./static/css/step4.css">
+</head>
+<body>
+      <h3>Try this on new images to test the model, or just click continue</h3>
+      <br>
+      <form action="/detecting" method="post" enctype="multipart/form-data">
+        <input name="input-file" type="file" accept="image/jpeg, image/jpg, image/png">
+        <button type="submit">Perform Detections</button>
+
+      </form>
+
+      {% if filename %}
+
+        <img src="./static/manual_detections/{{filename}}" alt="Something fishy">
+      {% endif %}
+
+      {% if scores and scores|length > 0 %}
+        {% for i in range(scores|length) %}
+            <h4>{{i+1}}. Name: {{names[i]}}, Score: {{scores[i]}}</h4>
+        {% endfor %}
+      {% endif %}
+
+</body>
+</html>

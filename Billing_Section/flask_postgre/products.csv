@@ -1,0 +1,5 @@
+classname,name,price,is_weighing,is_disabled
+goodknight,Good Knight,60,0,0
+soap,Pears Soap,90,0,1
+lemon,Lemon,70,1,0
+mouse,Mouse,450,0,0

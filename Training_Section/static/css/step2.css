@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #c7e6f3;
+}
+
+.step{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+}
+
+h1{
+   font-size: 40px;
+   transform: translate(-50%, -50%);
+}
+
+.son{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 93vh;
+    height: 11vh;
+}
+p{
+    margin-right: 70px;
+    font-size: 30px;
+}
+.styled {
+       border: 0;
+       line-height: 2.5;
+       padding: 0 20px;
+       font-size: 1rem;
+       text-align: center;
+       color: #fff;
+       text-shadow: 1px 1px 1px #000;
+       border-radius: 10px;
+       background-color: rgba(220, 0, 0, 1);
+       background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+       box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.styled:hover {
+       background-color: rgba(255, 0, 0, 1);
+}
+.styled:active {
+       box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.soon{
+       display: flex;
+       position: absolute;
+       top: 39%;
+       left: 35%;
+       transform: translate(-50%, -50%);
+}
+.pii{
+       margin-left: 20px;
+}
+h2{
+       margin-top: 5px;
+}
+.anchor{
+    margin-top: 15px;
+}
+.label{
+    width:100px ;
+    height: 129px;
+    margin-bottom: 10px;
+    object-fit: cover;
+    object-position: center;
+}
+.extra{
+    position: absolute;
+       top: 46%;
+       left: 35.4%;
+       transform: translate(-50%, -50%);
+}
+

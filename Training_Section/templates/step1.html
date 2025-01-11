@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Collect Images</title>
+    <link rel="stylesheet" href="./static/css/step1.css" />
+    
+  </head>
+  <body>
+    <header id="heading">
+      <h1>AI BILLER TRAINING SECTION</h1>
+    </header>
+
+    <section style="margin-top: 50px; margin-left: 18%">
+      <div>
+        <h2>Step-1:-</h2>
+        <p style="font-size: 30px; margin-top: -3px">Collect Images</p>
+        <input
+          type="radio"
+          name="image-collection-choice"
+          checked
+          onchange="toggleImageCollectionSection('local-file-section')"
+        />
+        <label>Choose local files</label>
+        <input
+          type="radio"
+          name="image-collection-choice"
+          onchange="toggleImageCollectionSection('capture-section')"
+        />
+        <label>Capture images</label>
+      </div>
+    </section>
+
+    <section
+      id="local-file-section"
+      style="margin-top: 30px; margin-left: 18%; margin-right: 18%"
+    >
+      <form
+        action="http://127.0.0.1:5000/label-images"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div class="column">
+          <img
+            style="width: 75px; height: 77px"
+            src="./static/images/step1_1.png"
+            alt="img"
+          />
+        </div>
+        <div class="column">
+          <input
+            id="file-input"
+            class="custom-file-input"
+            type="file"
+            accept="image/jpeg, image/jpg, image/png"
+            name="files"
+            multiple
+          />
+        </div>
+
+        <div
+          style="
+            display: flex;
+            margin-top: 20px;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <div style="text-align: center">
+            <h3 style="margin-bottom: 10px" id="label-number"></h3>
+            <button id="button-id" type="submit" style="display: none">
+              Continue
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <section
+      id="capture-section"
+      style="margin-top: 60px; margin-left: 18%; margin-right: 18%; display: none;"
+    >
+      <form
+        id="capture-form"
+        action="http://127.0.0.1:5000/label-images"
+        method="post"
+      >
+        <div class="column">
+          <img
+            style="width: 75px; height: 77px"
+            src="./static/images/step1_2.png"
+            alt="img"
+          />
+        </div>
+        <div class="row" style="margin-top: 20px">
+          <div class="column"></div>
+          <div class="column">
+            <input
+              id="num-faces"
+              type="number"
+              placeholder="Number of Faces"
+              required
+              name="num-faces"
+            />
+            <input
+              id="product-name"
+              type="text"
+              placeholder="Product Name"
+              required
+              name="product-name"
+            />
+          </div>
+          <div class="column">
+            <button
+              id="capture-form-button"
+              class="capture-button"
+              type="submit"
+            >
+              Capture
+            </button>
+          </div>
+          <div class="column"></div>
+        </div>
+
+        <div style="text-align: center; margin-top: 15px">
+          <p id="validation-error" style="color: red; display: none"></p>
+        </div>
+      </form>
+    </section>
+
+    <!--JAVASCRIPT -->
+
+    <!-- SWITCH THE SECTIONS BASED ON CHOICE OF IMAGE GATHERING: choose files or capture images-->
+    <script>
+      function toggleImageCollectionSection(sectionId) {
+        const localFileSection = document.getElementById("local-file-section");
+        const captureSection = document.getElementById("capture-section");
+
+        if (sectionId === "local-file-section") {
+          localFileSection.style.display = "block";
+          captureSection.style.display = "none";
+        } else if (sectionId === "capture-section") {
+          localFileSection.style.display = "none";
+          captureSection.style.display = "block";
+        }
+      }
+    </script>
+
+    <!-- HANDLING THE OPERATIONS IN CHOOSE FILES -->
+    <script>
+      const labelElement = document.getElementById("label-number");
+      const continueButton = document.getElementById("button-id");
+
+      document
+        .querySelector("#file-input")
+        .addEventListener("change", function () {
+          const files = this.files;
+          var number = files.length;
+          if (files.length > 0) {
+            labelElement.innerHTML = number + " images selected";
+            continueButton.style.display = "block";
+          } else {
+            labelElement.innerHTML = "No images selected";
+            continueButton.style.display = "none";
+          }
+        });
+    </script>
+
+    <!-- CAPTURE SECTION HANDLING -->
+    <script>
+      const numFacesInput = document.getElementById("num-faces");
+      const productNameInput = document.getElementById("product-name");
+      const submitButton = document.getElementById("capture-form-button");
+      const validationError = document.getElementById("validation-error");
+      const formElement = document.getElementById("capture-form");
+
+      submitButton.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent form submission
+        const numFaces = parseInt(numFacesInput.value, 10);
+        const productName = productNameInput.value.trim();
+        console.log(numFaces + " : " + productName);
+
+        // Validate number of faces
+        if (isNaN(numFaces) || numFaces < 1 || numFaces > 10) {
+          validationError.textContent = "Number should be between 1 and 10";
+          validationError.style.display = "block";
+          return; // Stop further execution
+        }
+
+        // Validate product name
+        if (productName.includes(" ")) {
+          validationError.textContent =
+            "Product name cannot contain blank spaces";
+          validationError.style.display = "block";
+          return; // Stop further execution
+        }
+
+        console.log("NOthing wrong");
+        // If all validations pass, submit the form
+        formElement.submit();
+      });
+    </script>
+  </body>
+</html>
